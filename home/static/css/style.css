@@ -1,5 +1,14 @@
 *{}
 
+.carousel-inner>.item>a>img, .carousel-inner>.item>img {
+    width:  100%;
+    max-height: 600px;
+}
+
+.carousel-inner .item .carousel-caption img {
+	max-width: 200px;
+}
+
 .navbar {
     max-height:  70px;
     padding: 10px 0 10px 0;
@@ -13,21 +22,118 @@
 
 .navbar-default .navbar-nav>li>a {
     color: #dcdcdc;
-}
-
-.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
-    color: #fff;
-}
-
-.navbar-default .navbar-brand {
-    color:  #dcdcdc;
-}
-
-.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
-    color: #fff;
+    background: #008800;
 }
 
 .navbar-default {
 	background-color: #008800;
 	border-color: #007700;
 }
+
+/* css footer */
+section {
+    padding: 60px 0 10px 0;
+}
+
+section .section-title {
+    text-align: center;
+    color: #007b5e;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+#footer {
+    background: #222c38 !important;
+}
+#footer h4{
+	padding-left: 10px;
+    border-left: 3px solid #eeeeee;
+    margin: 5px 0 15px 0; 
+    color:#ffffff;
+    font-weight: bold;
+}
+#footer a {
+    color: #ffffff;
+    text-decoration: none !important;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+#footer p {
+    color: #fff;
+}
+#footer ul.social li{
+	padding: 3px 0;
+}
+#footer ul.social li a i {
+    margin-right: 10px;
+	font-size:25px;
+	-webkit-transition: .5s all ease;
+	-moz-transition: .5s all ease;
+	transition: .5s all ease;
+}
+#footer ul.social li:hover a i {
+	font-size:35px;
+	margin-top:-10px;
+	color: #fff;
+}
+#footer ul.social li a,
+#footer ul.quick-links li a{
+	color:#dcdcdc;
+}
+#footer ul.social li a:hover{
+	color:#fff;
+}
+#footer ul.quick-links li{
+	margin-bottom: 7px;
+}
+#footer ul.quick-links li a{
+	padding: 3px 0;
+	-webkit-transition: .5s all ease;
+	-moz-transition: .5s all ease;
+	transition: .5s all ease;
+}
+#footer ul.quick-links li a:hover{
+	padding: 3px 0;
+	margin-left:10px;
+	font-weight:700;
+	color: #fff
+}
+#footer ul.quick-links li a i{
+	margin-right: 5px;
+}
+#footer ul.quick-links li a:hover i {
+    font-weight: 700;
+    color: #fff;
+}
+
+@media (max-width:767px){
+	#footer h4 {
+	    padding-left: 0;
+	    border-left: transparent;
+	    padding-bottom: 0px;
+	    margin-bottom: 10px;
+	}
+
+	#footer{
+		text-align: center;
+	}
+
+	.carousel-inner .item .carousel-caption img {
+		max-width: 100px;
+	}
+
+	#particles-js{
+		max-height: 300px; 
+	}
+}
+
+/* end css footer */
+
+/* particles canvas */
+#particles-js{
+	position: absolute;
+    background: transparent;
+    z-index: 1;
+    width: 100%;
+    height: 600px;
+}
+/* end particles canvas */
