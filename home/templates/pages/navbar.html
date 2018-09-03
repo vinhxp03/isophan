@@ -1,38 +1,57 @@
 {% load staticfiles %} <!-- declare load file static -->
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-   <div class="container">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-         <span class="sr-only">Toggle navigation</span>
-         <span class="icon-bar"></span>
-         <span class="icon-bar"></span>
-         <span class="icon-bar"></span>
-         </button>
-         <a class="navbar-brand" href="/">
-            <img src="{% static 'images/logo/iso_logo.png' %}" title="Iso Phan" alt="Iso Phan"></a>
-      </div>
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse navbar-ex1-collapse">
-         <ul class="nav navbar-nav">
-            <li class="active"><a href="/">Trang chủ</a></li>
-            <li class="dropdown">
-               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blogs <b class="caret"></b></a>
-               <ul class="dropdown-menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li><a href="#">Separated link</a></li>
-               </ul>
-            </li>
-            <li class=""><a href="#">Giới thiệu</a></li>
-            <li class=""><a href="#">Liên hệ</a></li>
-         </ul>
-         <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><i class="fas fa-search fa-lg"></i></a></li>
-            <li><a href=""><i class="fas fa-user fa-lg"></i></a></li>
-         </ul>
-      </div>
-      <!-- /.navbar-collapse -->
-   </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <img src="{% static 'images/logo/iso_logo.png' %}" alt="Iso Phan" title="Iso Phan">
+    </a>
+    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    {% with request.resolver_match.url_name as url_name %}
+    <div class="navbar-collapse collapse" id="navbarsExample07" style="">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item {% if url_name == None %}active{% endif %}">
+          <a class="nav-link" href="/">Trang chủ <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item dropdown {% if url_name == 'blogs' %}active{% endif %}">
+          <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blogs</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown01">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+        <li class="nav-item {% if url_name == 'articles' %}active{% endif %}">
+          <a class="nav-link" href="{% url 'articles' %}">Bài viết</a>
+        </li>
+        <li class="nav-item {% if url_name == 'introduce' %}active{% endif %}">
+          <a class="nav-link" href="{% url 'introduce' %}">Giới thiệu</a>
+        </li>
+        <li class="nav-item {% if url_name == 'contact' %}active{% endif %}">
+          <a class="nav-link" href="{% url 'introduce' %}">Liên hệ</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        {% if user.username %}
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-search"></i></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="dropdown02" href="https://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{user.first_name}} {{user.last_name}}</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown02">
+              <a class="dropdown-item" href="{% url 'logout' %}">Đăng xuất</a>
+            </div>
+          </li>
+        {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-search"></i></a>
+          </li>
+          <li class="nav-item {% if url_name == 'login' or url_name == 'register' %}active{% endif %}">
+            <a class="nav-link" href="{% url 'login' %}">Đăng nhập</a>
+          </li>
+        {% endif %}
+      </ul>
+      {% endwith %}
+    </div>
+  </div>
 </nav>

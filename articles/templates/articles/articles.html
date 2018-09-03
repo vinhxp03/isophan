@@ -1,0 +1,40 @@
+{% extends "pages/base.html" %}
+
+{% load staticfiles %}
+{% block title %}
+	Bài viết
+{% endblock title %}
+
+{% block header %}
+	<div class="articles header background">
+		<div class="gradient">
+	        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%">
+	            <defs>
+	                <linearGradient id="fade" y2="1" x2="0">
+	                    <stop offset="0" stop-color="white" stop-opacity="1"></stop>
+	                    <stop offset="1" stop-color="white" stop-opacity="0"></stop>
+	                </linearGradient>
+	                <linearGradient id="gradient" y2="0" x2="1">
+	                    <stop offset="0" stop-color="#016266" stop-opacity="1"></stop>
+	                    <stop offset="1" stop-color="#6d0572" stop-opacity="1"></stop>
+	                </linearGradient>
+	                <mask id="mask" maskContentUnits="objectBoundingBox">
+	                    <rect width="1" height="1" fill="url(#fade)"></rect>
+	                </mask>
+	            </defs>
+	            <rect width="100%" height="100%" fill="url(#gradient)" mask="url(#mask)"></rect>
+	        </svg>
+	    </div>
+		<div class="item">
+			<img src="{% static 'images/background/space-light-speed.png' %}" alt="">
+		</div>
+	</div>
+{% endblock header %}
+
+{% block content %}
+	{% for article in articles %}
+		<h2><a href="{% url 'details' slug=article.slug %}">{{ article.title }}</a></h2>
+		<p>{{ article.snippet }}</p>
+		<p>{{ article.date }}</p>
+	{% endfor %}
+{% endblock content %}

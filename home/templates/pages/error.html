@@ -1,0 +1,29 @@
+{% extends "pages/base.html" %}
+
+{% load staticfiles %}
+{% block title %}Lỗi! Không tìm thấy trang này{% endblock title %}
+
+{% block header %}
+	<div id="particles-js">
+	</div>
+	<div id="carousel-slider" class="carousel slide">
+	 <div class="carousel-inner" role="listbox">
+	    <div class="item active">
+	       <img src="{% static 'images/logo/header_background.jpg' %}" alt="">
+	       <div class="container">
+	          <div class="carousel-caption error">
+	            <h3>Rất tiếc, bạn đang cố truy cập vào nội dung không tồn tại.</h3>
+	          </div>
+	       	</div>
+	    </div>
+	 </div>
+	</div>
+{% endblock header %}
+
+{% block particles %}
+	<script>
+      particlesJS.load('particles-js', '{% static "particles.json" %}', function() {
+        console.log('particles.js config loaded');
+      });
+   </script>
+{% endblock particles %}

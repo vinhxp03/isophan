@@ -1,4 +1,31 @@
 {% extends "pages/base.html" %}
 
+{% load staticfiles %}
 {% block title %} Iso Phan Web{% endblock title %}
+
+{% block header %}
+	<div id="particles-js">
+	</div>
+	<div id="carousel-slider" class="carousel slide">
+	 <div class="carousel-inner" role="listbox">
+	    <div class="item active">
+	       <img src="{% static 'images/logo/header_background.jpg' %}" alt="">
+	       <div class="container">
+	          <div class="carousel-caption">
+	             <img src="{% static 'images/logo/iso_logo_dc.png' %}" alt="Iso Phan">
+	             <h2>Chào mừng bạn ghé thăm! Have a nice day!</h2>
+	          </div>
+	       </div>
+	    </div>
+	 </div>
+	</div>
+{% endblock header %}
+
+{% block particles %}
+	<script>
+      particlesJS.load('particles-js', '{% static "particles.json" %}', function() {
+        console.log('particles.js config loaded');
+      });
+   </script>
+{% endblock particles %}
 

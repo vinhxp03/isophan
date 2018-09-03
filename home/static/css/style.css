@@ -1,33 +1,69 @@
 *{}
 
+.header-page .articles .gradient {
+    position: absolute;
+    width: 100%;
+}
+
+.header-page .articles.header.background img {
+    width: 100%;
+}
+
+.border {
+    padding: 0px 10px;
+}
+
+.form-control:focus{
+	border-color: #00dd00;
+	box-shadow: 0 0 0 0.1rem rgba(23, 204, 23, 0.57);
+}
+
+hr {
+	background: #dcdcdc;
+}
+
+.bg-dark {
+    background-color: #008800!important;
+}
+
+.navbar.navbar-expand-lg .navbar-brand img {
+    width: 65px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #dcdcdc;
+}
+
+.navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover {
+    color: #fff;
+}
+
+.navbar-dark .navbar-nav .active>.nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show>.nav-link {
+    font-weight:  bold;
+}
+
+.page-content form {
+	padding: 25px 0 25px 0;
+}
+
+.page-content form .errorlist{
+	color: #d11111;
+	list-style: none;
+    margin-top: 5px;
+    padding-left: 0;
+}
+
 .carousel-inner>.item>a>img, .carousel-inner>.item>img {
     width:  100%;
     max-height: 600px;
 }
 
+.carousel-inner .item .carousel-caption h2 {
+	color: #dcdcdc;
+}
+
 .carousel-inner .item .carousel-caption img {
 	max-width: 200px;
-}
-
-.navbar {
-    max-height:  70px;
-    padding: 10px 0 10px 0;
-}
-
-.navbar-header a img {
-    position:  relative;
-    width:  70px;
-    margin-top: -17px;
-}
-
-.navbar-default .navbar-nav>li>a {
-    color: #dcdcdc;
-    background: #008800;
-}
-
-.navbar-default {
-	background-color: #008800;
-	border-color: #007700;
 }
 
 /* css footer */
@@ -44,7 +80,7 @@ section .section-title {
 #footer {
     background: #222c38 !important;
 }
-#footer h4{
+#footer h5{
 	padding-left: 10px;
     border-left: 3px solid #eeeeee;
     margin: 5px 0 15px 0; 
@@ -113,27 +149,30 @@ section .section-title {
 	    margin-bottom: 10px;
 	}
 
-	#footer{
-		text-align: center;
+	.carousel-inner .item .carousel-caption img, {
+		max-width: 50px;
 	}
 
-	.carousel-inner .item .carousel-caption img {
-		max-width: 100px;
-	}
-
-	#particles-js{
-		max-height: 300px; 
+	.carousel-inner .item .carousel-caption h2 {
+		font-size: 30px;
 	}
 }
 
 /* end css footer */
 
 /* particles canvas */
+#particles-js canvas.particles-js-canvas-el{
+	max-height: 600px;
+}
+
 #particles-js{
+    width: 100%;
 	position: absolute;
     background: transparent;
     z-index: 1;
-    width: 100%;
-    height: 600px;
 }
 /* end particles canvas */
+
+body{
+	display: block;
+}

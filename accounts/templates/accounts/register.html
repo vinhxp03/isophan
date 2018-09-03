@@ -1,0 +1,23 @@
+{% extends "pages/base.html" %}
+
+{% block title %}
+	Đăng ký
+{% endblock title %}
+
+{% block content %}
+<div class="col-md-6 offset-md-3">
+	<div class="border">	
+		<form action="" method="post">
+			{% csrf_token %}
+			{% for field in form %}
+				<div class="form-group">
+					<label for="">{{ field.label }}</label>
+					{{ field }}
+					{{ field.errors }}
+				</div>
+			{% endfor %}
+			<button type="submit" class="btn btn-success">Register</button>
+		</form>
+	</div>
+</div>
+{% endblock content %}
