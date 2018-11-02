@@ -32,9 +32,25 @@
 {% endblock header %}
 
 {% block content %}
-	{% for article in articles %}
-		<h2><a href="{% url 'details' slug=article.slug %}">{{ article.title }}</a></h2>
-		<p>{{ article.snippet }}</p>
-		<p>{{ article.date }}</p>
-	{% endfor %}
+	<div class="block-left col-sm-12 col-md-9">
+		{% for article in articles %}
+			<div class="article">
+				<div class="header">
+					<h2><a href="{% url 'details' slug=article.slug %}">{{ article.title }}</a></h2>
+					<hr>
+					<p>{{ article.date }}</p>
+				</div>
+				<div class="content">
+					<div class="thumb">
+						{% if article.thumb != 'True' %}
+							<img src="{{ article.thumb.url }}" alt="">
+						{% endif %}
+					</div>
+					<p>{{ article.snippet|safe|linebreaks }}<a href="{% url 'details' slug=article.slug %}">Xem thêm ...</a></p>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+	<div class="block-right col-sm-0 col-md-3">
+	</div>
 {% endblock content %}

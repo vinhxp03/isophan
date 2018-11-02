@@ -11,7 +11,7 @@ from django.views.generic import ListView, DetailView
 # 	articles = Article.objects.all().order_by('date')
 # 	return render(request, 'articles/articles.html', {'articles': articles})
 class ArticleListView(ListView):
-	queryset = Article.objects.all().order_by('date')
+	queryset = Article.objects.all().order_by('-date')
 	template_name = 'articles/articles.html'
 	context_object_name = 'articles'
 

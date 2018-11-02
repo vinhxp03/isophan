@@ -1,5 +1,37 @@
 *{}
 
+.page-content .block-left .article .content .thumb img {
+    width:  100%;
+}
+
+.page-content .block-left .article .header p {
+    padding-bottom: 10px;
+}
+
+.page-content .block-left .article .content a {
+    color: #080;
+}
+
+.page-content .block- .article .header a {}
+
+.page-content .block-left .article .header a {
+    font-weight:  bold;
+    color: #333;
+}
+
+.page-content .block-left .article .header a:hover {
+    color: #00bf00;
+    list-style:  none;
+    text-decoration:  none;
+}
+
+.page-content .block-left .article {
+    display:  block;
+    box-shadow: 0 0 5px 1px #c3c3c3;
+    margin: 25px 0;
+    padding: 30px;
+}
+
 .header-page .articles .gradient {
     position: absolute;
     width: 100%;
@@ -175,4 +207,5 @@ section .section-title {
 
 body{
 	display: block;
+	font-family: "Times New Roman", Times, serif;
 }
