@@ -1,3 +1,8 @@
 # isophan
 Django Python
-
+# Deploy in pythonanywhere
+- Bash
+>> git clone
+- Create a Virtural:
+>> virtualenv --python=python3.6 isophan_env
+>> 
