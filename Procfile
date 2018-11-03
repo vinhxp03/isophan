@@ -1,2 +1,2 @@
 release: python manage.py migrate
-web: gunicorn mshop.wsgi --log-file -
+web: gunicorn isophan.wsgi --log-file -
